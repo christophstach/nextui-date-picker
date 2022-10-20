@@ -1,0 +1,45 @@
+{
+  "name": "nextui-date-picker",
+  "author": {
+    "name": "Christoph Stach",
+    "email": "christoph.stach@gmail.com",
+    "url": "https://github.com/christophstach"
+  },
+  "version": "0.0.4",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/nextui-date-picker.umd.cjs",
+  "module": "./dist/nextui-date-picker.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/nextui-date-picker.js",
+      "require": "./dist/nextui-date-picker.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "format": "npx prettier --write ."
+  },
+  "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.10",
+    "date-fns": "^2.29.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "use-lilius": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.2",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.6.6"
+  }
+}
