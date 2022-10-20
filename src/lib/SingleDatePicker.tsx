@@ -109,7 +109,6 @@ export default function SingleDatePicker(props: SingleDatePickerProps) {
       <Popover isBordered disableAnimation placement="bottom" isOpen={open} onOpenChange={setOpen}>
         <Popover.Trigger>
           <Button css={{  visibility: 'hidden', position: 'absolute', bottom: '0', left: '0' }} />
-            
         </Popover.Trigger>
         <Popover.Content>
           <Calendar>
