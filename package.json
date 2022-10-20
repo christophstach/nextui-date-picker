@@ -5,7 +5,7 @@
     "email": "christoph.stach@gmail.com",
     "url": "https://github.com/christophstach"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "files": [
     "dist"
