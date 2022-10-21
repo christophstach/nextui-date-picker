@@ -18,7 +18,7 @@ const Field = styled('div', {
   padding: '4px 10px',
   background: '$accents0',
   borderRadius: '$md',
-  minWidth: '250px'
+  minWidth: '250px',
 });
 
 interface DateFieldProps extends AriaDateFieldProps<DateValue> {

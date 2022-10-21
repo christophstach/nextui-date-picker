@@ -27,11 +27,10 @@ const CalendarFooter = styled('div', {
 
 interface CalendarProps extends AriaCalendarProps<DateValue> {
   todayLabel?: string;
-  clearLabel?: string;
 }
 
 export default function Calendar(props: CalendarProps) {
-  const { todayLabel = 'Today', clearLabel = 'Clear' } = props;
+  const { todayLabel = 'Today' } = props;
 
   const { locale } = useLocale();
   const state = useCalendarState({
@@ -51,7 +50,6 @@ export default function Calendar(props: CalendarProps) {
   function handleOnTodayClick() {
     // state.selectDate()
     state.selectDate(today(getLocalTimeZone()));
-    
   }
 
   function handleOnClearClick() {
@@ -73,9 +71,6 @@ export default function Calendar(props: CalendarProps) {
       <CalendarFooter>
         <Button auto shadow size="sm" onPress={handleOnTodayClick}>
           {todayLabel}
-        </Button>
-        <Button auto shadow size="sm" onPress={handleOnClearClick}>
-          {clearLabel}
         </Button>
       </CalendarFooter>
     </Box>

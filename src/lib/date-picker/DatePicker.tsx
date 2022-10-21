@@ -27,8 +27,11 @@ export default function DatePicker(props: DatePickerProps) {
   });
 
   const ref = useRef(null);
-  const { labelProps, fieldProps, buttonProps, dialogProps, calendarProps, errorMessageProps } =
-    useDatePicker(props, state, ref);
+  const { labelProps, fieldProps, buttonProps, dialogProps, calendarProps, errorMessageProps } = useDatePicker(
+    props,
+    state,
+    ref
+  );
 
   function handleOnClose() {
     state.setOpen(false);
