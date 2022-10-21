@@ -1,6 +1,7 @@
 import { createTheme, globalCss, NextUIProvider, styled } from '@nextui-org/react';
-import { SingleDatePicker } from './lib';
-import backgroundImage from './assets/john-towner-JgOeRuGD_Y4-unsplash.jpg';
+
+import DatePicker from './lib/date-picker/DatePicker';
+import { today, getLocalTimeZone } from '@internationalized/date';
 
 // Photo by <a href="https://unsplash.com/@heytowner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JOHN TOWNER</a> on <a href="https://unsplash.com/s/photos/dark?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
@@ -34,7 +35,7 @@ export default function App() {
     <NextUIProvider theme={darkTheme}>
       <FlexParent>
         <div>
-          <SingleDatePicker inputProps={{ label: 'Single Date Picker' }} />
+          <DatePicker label="Datepicker" minValue={today(getLocalTimeZone())} />
         </div>
       </FlexParent>
     </NextUIProvider>

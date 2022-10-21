@@ -1,3 +1,3 @@
-import SingleDatePicker from './SingleDatePicker';
+import DatePicker from './date-picker/DatePicker';
 
-export { SingleDatePicker };
+export { DatePicker };

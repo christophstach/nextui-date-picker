@@ -1,9 +1,9 @@
-export default function CalendarIcon(props: { size?: string }) {
-  const { size = '1.5rem' } = props;
+export default function CalendarIcon(props: { w?: string; h?: string }) {
+  const { w = '1rem', h = '1rem' } = props;
 
   return (
     <svg
-      style={{ width: size, height: size }}
+      style={{ width: w, height: h }}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
