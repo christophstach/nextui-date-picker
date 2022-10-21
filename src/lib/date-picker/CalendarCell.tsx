@@ -28,20 +28,21 @@ export default function CalendarCell(props: CalendarCellProps) {
         ref={ref}
         hidden={isOutsideVisibleRange}
         css={{
-          width: '2.25rem',
-          height: '2.25rem',
+          width: '2rem',
+          height: '2rem',
           outline: 'none',
         }}
       >
         <Box
           css={{
+            fontSize: '$sm',
             width: '100%',
             height: '100%',
             borderRadius: '100%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: isDisabled ? '$gray300' : undefined,
+            color: isDisabled ? '$gray500' : isSelected ? '$white' : undefined,
             cursor: !isDisabled ? 'pointer' : 'default',
             backgroundColor: isSelected ? '$primary' : undefined,
             border: isSelected ? '2px solid $primaryBorder' : undefined,

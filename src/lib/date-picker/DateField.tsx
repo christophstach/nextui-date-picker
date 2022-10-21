@@ -66,13 +66,13 @@ function DateSegment(props: DateSegmentProps) {
         ...segmentProps.style,
         width: 'fit-content',
         fontVariantNumeric: 'tabular-nums',
-        color: !segment.isEditable ? '$gray500' : '$gray800',
         boxSizing: 'content-box',
         padding: '0 0.5rem',
         borderRadius: '0.125rem',
         textAlign: 'center',
         outline: 'none',
-
+        fontSize: '$sm',
+        color: segment.isPlaceholder? '$accents6' : undefined,
         '&:focus': {
           background: '$primary',
           color: '$white',
@@ -83,6 +83,7 @@ function DateSegment(props: DateSegmentProps) {
         as="span"
         aria-hidden="true"
         css={{
+
           display: !segment.isPlaceholder ? 'none' : 'block',
           minWidth: `${String(segment.placeholder).length}ch`,
           pointerEvents: 'none',
