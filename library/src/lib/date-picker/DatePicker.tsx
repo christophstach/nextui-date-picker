@@ -12,7 +12,7 @@ const Label = styled('label', {
   display: 'block',
   fontSize: '$sm',
   marginBottom: '6px',
-  paddingLeft: '4px'
+  paddingLeft: '4px',
 });
 
 export interface DatePickerProps extends DatePickerStateOptions {
@@ -31,7 +31,6 @@ export default function DatePicker(props: DatePickerProps) {
     state,
     ref
   );
-
 
   function handleOnClose() {
     state.setOpen(false);

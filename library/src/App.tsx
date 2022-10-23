@@ -6,7 +6,6 @@ import { DateValue } from '@react-types/datepicker';
 import DatePicker from './lib/date-picker/DatePicker';
 import Box from './lib/shared/Box';
 
-
 const globalStyles = globalCss({
   'body, html, #root, #root > div': {
     height: '100%',
@@ -42,7 +41,13 @@ export default function App() {
       <FlexParent>
         <Box css={{ display: 'flex', gap: '1rem', flexDirection: 'column' }}>
           <Box>
-            <DatePicker label="Datepicker" value={dateValue} onChange={setDateValue} minValue={dateToday} maxValue={endOfMonth(dateToday)} />
+            <DatePicker
+              label="Datepicker"
+              value={dateValue}
+              onChange={setDateValue}
+              minValue={dateToday}
+              maxValue={endOfMonth(dateToday)}
+            />
           </Box>
           <Box>
             <Input label="Normal Input for Comparison" value="Test" placeholder="Placeholder" />
