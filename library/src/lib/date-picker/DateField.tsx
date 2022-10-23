@@ -72,7 +72,7 @@ function DateSegment(props: DateSegmentProps) {
         textAlign: 'center',
         outline: 'none',
         fontSize: '$sm',
-        color: segment.isPlaceholder? '$accents6' : undefined,
+        color: segment.isPlaceholder ? '$accents6' : undefined,
         '&:focus': {
           background: '$primary',
           color: '$white',
@@ -83,7 +83,6 @@ function DateSegment(props: DateSegmentProps) {
         as="span"
         aria-hidden="true"
         css={{
-
           display: !segment.isPlaceholder ? 'none' : 'block',
           minWidth: `${String(segment.placeholder).length}ch`,
           pointerEvents: 'none',

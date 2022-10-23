@@ -1,7 +1,6 @@
 import { useRef } from 'react';
-import { useDatePickerState } from '@react-stately/datepicker';
+import { useDatePickerState, DatePickerStateOptions } from '@react-stately/datepicker';
 import { useDatePicker } from '@react-aria/datepicker';
-import { CalendarDate } from '@internationalized/date';
 import { Button, Popover, styled } from '@nextui-org/react';
 
 import Box from '../shared/Box';
@@ -12,18 +11,18 @@ import { DateField } from './DateField';
 const Label = styled('label', {
   display: 'block',
   fontSize: '$sm',
-  marginBottom: '$xs',
+  marginBottom: '6px',
+  paddingLeft: '4px'
 });
 
-export interface DatePickerProps {
+export interface DatePickerProps extends DatePickerStateOptions {
   label: string;
-  minValue: CalendarDate;
 }
 
 export default function DatePicker(props: DatePickerProps) {
   const state = useDatePickerState({
-    ...props,
     shouldCloseOnSelect: true,
+    ...props,
   });
 
   const ref = useRef(null);
@@ -32,6 +31,7 @@ export default function DatePicker(props: DatePickerProps) {
     state,
     ref
   );
+
 
   function handleOnClose() {
     state.setOpen(false);

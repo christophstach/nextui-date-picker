@@ -1,7 +1,7 @@
 import { useCalendarState } from '@react-stately/calendar';
 import { useCalendar } from '@react-aria/calendar';
 import { useLocale } from '@react-aria/i18n';
-import { createCalendar, today, getLocalTimeZone } from '@internationalized/date';
+import { createCalendar, today, getLocalTimeZone} from '@internationalized/date';
 import { Button, styled, Text } from '@nextui-org/react';
 import { DateValue } from '@react-types/datepicker';
 import { AriaCalendarProps } from 'react-aria';
@@ -48,12 +48,7 @@ export default function Calendar(props: CalendarProps) {
   delete nextButtonProps.isDisabled;
 
   function handleOnTodayClick() {
-    // state.selectDate()
     state.selectDate(today(getLocalTimeZone()));
-  }
-
-  function handleOnClearClick() {
-    // state.setValue(null);
   }
 
   return (

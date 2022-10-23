@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { createTheme, globalCss, Input, NextUIProvider, styled } from '@nextui-org/react';
+import { today, getLocalTimeZone, endOfMonth } from '@internationalized/date';
+import { DateValue } from '@react-types/datepicker';
 
 import DatePicker from './lib/date-picker/DatePicker';
-import { today, getLocalTimeZone } from '@internationalized/date';
 import Box from './lib/shared/Box';
 
-// Photo by <a href="https://unsplash.com/@heytowner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JOHN TOWNER</a> on <a href="https://unsplash.com/s/photos/dark?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 const globalStyles = globalCss({
   'body, html, #root, #root > div': {
@@ -19,7 +20,7 @@ const globalStyles = globalCss({
 
 const FlexParent = styled('div', {
   display: 'flex',
-  flexDirection: "column",
+  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   height: '100%',
@@ -33,19 +34,22 @@ const theme = createTheme({
 export default function App() {
   globalStyles();
 
+  const [dateValue, setDateValue] = useState<DateValue>(null as unknown as DateValue);
+  const dateToday = today(getLocalTimeZone());
+
   return (
     <NextUIProvider theme={theme}>
       <FlexParent>
-        <Box css={{ display: 'flex', gap: '1rem', flexDirection: 'column'}}>
+        <Box css={{ display: 'flex', gap: '1rem', flexDirection: 'column' }}>
           <Box>
-          <DatePicker label="Datepicker" minValue={today(getLocalTimeZone())} />
+            <DatePicker label="Datepicker" value={dateValue} onChange={setDateValue} minValue={dateToday} maxValue={endOfMonth(dateToday)} />
           </Box>
           <Box>
-          <Input label="Normal Input for Comparison" placeholder="Placeholder"  />
+            <Input label="Normal Input for Comparison" value="Test" placeholder="Placeholder" />
           </Box>
-          
-        </Box>
 
+          <pre>{JSON.stringify(dateValue?.toDate(getLocalTimeZone()), null, 2)}</pre>
+        </Box>
       </FlexParent>
     </NextUIProvider>
   );
