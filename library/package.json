@@ -1,11 +1,12 @@
 {
   "name": "nextui-date-picker",
+  "homepage": "https://nextui-date-picker.netlify.app",
   "author": {
     "name": "Christoph Stach",
     "email": "christoph.stach@gmail.com",
     "url": "https://github.com/christophstach"
   },
-  "version": "0.1.0",
+  "version": "0.2.1",
   "type": "module",
   "files": [
     "dist"
